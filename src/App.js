@@ -1,8 +1,5 @@
 import React from "react";
 
-const viewHeight = 500;
-const viewWidth = 500;
-
 const App = () => {
   return <svg width="750" height="831" viewBox="0 0 750 831" fill="none" xmlns="http://www.w3.org/2000/svg">
   <rect x="1.5" y="116.5" width="747" height="713" fill="#262626" stroke="black" stroke-width="3"/>

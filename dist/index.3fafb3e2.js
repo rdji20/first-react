@@ -26273,8 +26273,6 @@ try {
   var _react = require("react");
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _jsxFileName = "/Users/infa/Documents/INFO/INFO474/uw_mbb_vis/src/App.js";
-  const viewHeight = 500;
-  const viewWidth = 500;
   const App = () => {
     return (
       /*#__PURE__*/_reactDefault.default.createElement("svg", {
@@ -26286,7 +26284,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 7,
+          lineNumber: 4,
           columnNumber: 10
         }
       }, /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26300,7 +26298,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 8,
+          lineNumber: 5,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26313,7 +26311,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9,
+          lineNumber: 6,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("circle", {
@@ -26326,7 +26324,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10,
+          lineNumber: 7,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("circle", {
@@ -26339,7 +26337,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11,
+          lineNumber: 8,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26353,7 +26351,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 12,
+          lineNumber: 9,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26367,7 +26365,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 13,
+          lineNumber: 10,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("circle", {
@@ -26378,7 +26376,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14,
+          lineNumber: 11,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("line", {
@@ -26391,7 +26389,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 15,
+          lineNumber: 12,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26403,7 +26401,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 16,
+          lineNumber: 13,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26415,7 +26413,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 17,
+          lineNumber: 14,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26425,7 +26423,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18,
+          lineNumber: 15,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26437,7 +26435,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 19,
+          lineNumber: 16,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("rect", {
@@ -26449,7 +26447,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 17,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("line", {
@@ -26462,7 +26460,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 21,
+          lineNumber: 18,
           columnNumber: 3
         }
       }), /*#__PURE__*/_reactDefault.default.createElement("line", {
@@ -26475,7 +26473,7 @@ try {
         __self: undefined,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 22,
+          lineNumber: 19,
           columnNumber: 3
         }
       }))
