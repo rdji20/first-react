@@ -2,9 +2,10 @@
   "name": "uw_mbb_vis",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
     "start" : "parcel index.html",
+    "build": "parcel build index.html --public-url https://rdji20.github.io/info474-first/; rm -rf docs; mv dist docs;",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
