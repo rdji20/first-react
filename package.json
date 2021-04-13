@@ -2,7 +2,7 @@
   "name": "uw_mbb_vis",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.html",
+  "main": "docs/index.html",
   "scripts": {
     "start" : "parcel index.html",
     "build": "parcel build index.html --public-url https://rdji20.github.io/first-react-project/; rm -rf docs; mv dist docs;",
