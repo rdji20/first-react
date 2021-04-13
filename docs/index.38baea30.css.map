@@ -1,0 +1,1 @@
+{"mappings":"AAAA,QACA,YAAA,CACA,sBAAA,CACA,kBACA","sources":["./src/styles.css"],"sourcesContent":["#graphs {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n"],"names":[],"version":3,"file":"index.38baea30.css.map"}
