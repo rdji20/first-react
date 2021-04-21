@@ -8,40 +8,72 @@ const App = () => {
     "https://raw.githubusercontent.com/rdji20/data/master/nba-draymond/draymond.csv"
   );
 
-  // const [dataB];
+  const [dataFantasyPlayers, loading2] = useFetch(
+    "https://raw.githubusercontent.com/rdji20/first-react/main/nba_rank_by_year_tbl.csv"
+  );
 
   const size = 500;
-  const margin = 20;
-  const scaleUp = 10;
-  let totalDraymond;
+  const margin = 25;
+  const scaleUp = 2;
+  const startingPoint = size / 2;
+  let value = 0;
+  let count = 0;
+  let max = 0;
+  let min = 0;
 
   return (
     <div>
-      <p>Hello World</p>
       <svg width={size} height={size} style={{ border: "1px solid black" }}>
-        {dataDraymond.slice(0, 300).map((measurement, index) => {
-          totalDraymond += measurement.DRAYMOND;
+        <text text-anchor="start" x={size / 4 - 40} y="20">
+          DRAYMOND defense statistics
+        </text>
+        {dataDraymond.map((measurement, index) => {
+          let moreThan10thPoss = measurement.possessions >= 1000;
+          value = parseFloat(measurement.DRAYMOND);
+          count += value;
+          if (max <= value) {
+            max = value;
+          }
+          if (min >= value) {
+            min = value;
+          }
+
           return (
             <line
               key={index}
               id={measurement.player}
-              x1={size / 3}
-              y1={(margin - measurement.DRAYMOND) * scaleUp}
-              x2={size / 3 + size / 3}
-              y2={(margin - measurement.DRAYMOND) * scaleUp}
-              stroke="black"
-              strokeOpacity={0.2}
+              x1={size / 4}
+              y1={size / 2 - value * scaleUp}
+              x2={size / 4 + size / 2}
+              y2={size / 2 - value * scaleUp}
+              stroke={moreThan10thPoss ? "red" : "black"}
+              strokeOpacity={0.3}
             />
-
-            // <circle
-            //   key={index}
-            //   cx={index}
-            //   cy={measurement.DRAYMOND}
-            //   r="10"
-            // ></circle>
           );
         })}
-        {console.log(totalDraymond)}
+        {console.log(max, min, count)}
+        <text
+          text-anchor="middle"
+          x={size / 4 - 40}
+          y={startingPoint - max * scaleUp}
+        >
+          {max}
+        </text>
+        <text
+          text-anchor="middle"
+          x={size / 4 - 40}
+          y={startingPoint - min * scaleUp}
+        >
+          {min}
+        </text>
+        <text text-anchor="middle" x={size / 4 - 30} y={size / 2}>
+          0
+        </text>
+      </svg>
+      <svg width={size} height={size} style={{ border: "1px solid black" }}>
+        {dataFantasyPlayers.slice(0, 200).map((measurement, index) => {
+          console.log(index, measurement);
+        })}
       </svg>
 
       <h1> Dame vs Curry coming soon ...</h1>
