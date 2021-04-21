@@ -1,0 +1,15 @@
+#graphs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#graphs div {
+  margin: 20px;
+}
+
+.outlier {
+  stroke: red !important;
+}
+
+/*# sourceMappingURL=index.a45764df.css.map */
