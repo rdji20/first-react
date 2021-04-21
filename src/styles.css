@@ -1,5 +1,13 @@
 #graphs {
   display: flex;
   justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+}
+
+#graphs div {
+  margin: 20px;
+}
+
+.outlier {
+  stroke: red !important;
 }
