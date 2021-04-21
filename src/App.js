@@ -13,13 +13,18 @@ const App = () => {
   );
 
   const size = 500;
-  const margin = 25;
+  const size2 = 1000;
+  const margin = 30;
   const scaleUp = 2;
   const startingPoint = size / 2;
   let value = 0;
   let count = 0;
   let max = 0;
   let min = 0;
+  let maxMade = 0;
+  let minMade = 0;
+  let maxAtt = 0;
+  let minAtt = 0;
 
   return (
     <div>
@@ -51,7 +56,6 @@ const App = () => {
             />
           );
         })}
-        {console.log(max, min, count)}
         <text
           text-anchor="middle"
           x={size / 4 - 40}
@@ -70,10 +74,46 @@ const App = () => {
           0
         </text>
       </svg>
-      <svg width={size} height={size} style={{ border: "1px solid black" }}>
-        {dataFantasyPlayers.slice(0, 200).map((measurement, index) => {
+      <svg width={size2} height={size} style={{ border: "1px solid black" }}>
+        {dataFantasyPlayers.map((measurement, index) => {
+          let year = parseInt(measurement.year);
+          let threeMade = parseFloat(measurement.fg3);
+          let threeAtt = parseFloat(measurement.fg3a);
+          let goodAverage = threeMade / threeAtt > 0.4;
           console.log(index, measurement);
+          if (year < 2014) {
+            return;
+          }
+          if (maxMade < threeMade) {
+            maxMade = threeMade;
+          }
+          if (minMade > threeMade) {
+            minMade = threeMade;
+          }
+          if (maxAtt < threeAtt) {
+            maxAtt = threeAtt;
+          }
+          if (minAtt > threeAtt) {
+            minAtt = threeAtt;
+          }
+          return (
+            <circle
+              key={index}
+              cx={margin + parseFloat(measurement.fg3a)}
+              cy={size - margin - parseFloat(measurement.fg3)}
+              r="5"
+              fill="none"
+              stroke={goodAverage ? "red" : "black"}
+              strokeOpacity="0.3"
+            />
+          );
         })}
+        <text text-anchor="middle" x={15} y={size - maxMade - margin}>
+          {maxMade}
+        </text>
+        <text text-anchor="middle" x={15} y={size - minMade - margin}>
+          {minMade}
+        </text>
       </svg>
 
       <h1> Dame vs Curry coming soon ...</h1>
