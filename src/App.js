@@ -1,7 +1,8 @@
 import React from "react";
 import { useFetch } from "./hooks/useFetch";
-
-//Check d3 extend, d3 min. and d3 libraries
+import * as d3 from "d3";
+import PortlandDraymond from "./DameVsOthers";
+import DraymondDraymond from "./Draymond";
 
 const App = () => {
   const [dataDraymond, loading] = useFetch(
@@ -13,18 +14,47 @@ const App = () => {
   );
 
   const size = 500;
-  const size2 = 1000;
+  const size2 = 1100;
   const margin = 30;
   const scaleUp = 2;
   const startingPoint = size / 2;
-  let value = 0;
-  let count = 0;
-  let max = 0;
-  let min = 0;
-  let maxMade = 0;
-  let minMade = 0;
-  let maxAtt = 0;
-  let minAtt = 0;
+  const yearFantasyFilter = 2014;
+
+  const xScale = d3
+    .scaleLinear()
+    .domain([0, 42.195]) // unit: km
+    .range([0 + margin, size - margin]);
+
+  const maxDraymond = d3.max(
+    dataDraymond.map((measurement) => {
+      return parseFloat(measurement.DRAYMOND);
+    })
+  );
+  const minDraymond = d3.min(
+    dataDraymond.map((measurement) => {
+      return parseFloat(measurement.DRAYMOND);
+    })
+  );
+  const maxThreeAtt = d3.max(
+    dataFantasyPlayers.map((measurement) => {
+      return parseFloat(measurement.fg3a);
+    })
+  );
+  const minThreeAtt = d3.min(
+    dataFantasyPlayers.map((measurement) => {
+      return parseFloat(measurement.fg3a);
+    })
+  );
+  const maxThreeMade = d3.max(
+    dataFantasyPlayers.map((measurement) => {
+      return parseFloat(measurement.fg3);
+    })
+  );
+  const minThreeMade = d3.min(
+    dataFantasyPlayers.map((measurement) => {
+      return parseFloat(measurement.fg3);
+    })
+  );
 
   return (
     <div>
@@ -34,15 +64,7 @@ const App = () => {
         </text>
         {dataDraymond.map((measurement, index) => {
           let moreThan10thPoss = measurement.possessions >= 1000;
-          value = parseFloat(measurement.DRAYMOND);
-          count += value;
-          if (max <= value) {
-            max = value;
-          }
-          if (min >= value) {
-            min = value;
-          }
-
+          let value = parseFloat(measurement.DRAYMOND);
           return (
             <line
               key={index}
@@ -59,43 +81,33 @@ const App = () => {
         <text
           text-anchor="middle"
           x={size / 4 - 40}
-          y={startingPoint - max * scaleUp}
+          y={startingPoint - maxDraymond * scaleUp}
         >
-          {max}
+          {maxDraymond}
         </text>
         <text
           text-anchor="middle"
           x={size / 4 - 40}
-          y={startingPoint - min * scaleUp}
+          y={startingPoint - minDraymond * scaleUp}
         >
-          {min}
+          {minDraymond}
         </text>
         <text text-anchor="middle" x={size / 4 - 30} y={size / 2}>
           0
         </text>
       </svg>
+      <PortlandDraymond />
+      <DraymondDraymond />
       <svg width={size2} height={size} style={{ border: "1px solid black" }}>
         {dataFantasyPlayers.map((measurement, index) => {
           let year = parseInt(measurement.year);
           let threeMade = parseFloat(measurement.fg3);
           let threeAtt = parseFloat(measurement.fg3a);
           let goodAverage = threeMade / threeAtt > 0.4;
-          console.log(index, measurement);
-          if (year < 2014) {
+          if (year < yearFantasyFilter) {
             return;
           }
-          if (maxMade < threeMade) {
-            maxMade = threeMade;
-          }
-          if (minMade > threeMade) {
-            minMade = threeMade;
-          }
-          if (maxAtt < threeAtt) {
-            maxAtt = threeAtt;
-          }
-          if (minAtt > threeAtt) {
-            minAtt = threeAtt;
-          }
+
           return (
             <circle
               key={index}
@@ -108,11 +120,14 @@ const App = () => {
             />
           );
         })}
-        <text text-anchor="middle" x={15} y={size - maxMade - margin}>
-          {maxMade}
+        <text text-anchor="middle" x={20} y={size - maxThreeMade - margin}>
+          {maxThreeMade}
         </text>
-        <text text-anchor="middle" x={15} y={size - minMade - margin}>
-          {minMade}
+        <text text-anchor="middle" x={20} y={size - 10}>
+          {minThreeMade}
+        </text>
+        <text text-anchor="middle" x={+maxThreeAtt + margin} y={size - 10}>
+          {maxThreeAtt}
         </text>
       </svg>
 
