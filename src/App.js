@@ -3,6 +3,7 @@ import { useFetch } from "./hooks/useFetch";
 import * as d3 from "d3";
 import PortlandDraymond from "./DameVsOthers";
 import DraymondDraymond from "./Draymond";
+import ThreePointPercent from "./StephAndLillard";
 
 const App = () => {
   const [dataDraymond, loading] = useFetch(
@@ -19,11 +20,6 @@ const App = () => {
   const scaleUp = 2;
   const startingPoint = size / 2;
   const yearFantasyFilter = 2014;
-
-  const xScale = d3
-    .scaleLinear()
-    .domain([0, 42.195]) // unit: km
-    .range([0 + margin, size - margin]);
 
   const maxDraymond = d3.max(
     dataDraymond.map((measurement) => {
@@ -130,6 +126,7 @@ const App = () => {
           {maxThreeAtt}
         </text>
       </svg>
+      <ThreePointPercent />
 
       <h1> Dame vs Curry coming soon ...</h1>
       <svg

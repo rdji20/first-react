@@ -9,16 +9,6 @@ function PortlandDraymond() {
   const size = 500;
   const scaleUp = 20;
   const startingPoint = size / 2;
-  const maxDraymond = d3.max(
-    dataDraymond.map((measurement) => {
-      return parseFloat(measurement.DRAYMOND);
-    })
-  );
-  const minDraymond = d3.min(
-    dataDraymond.map((measurement) => {
-      return parseFloat(measurement.DRAYMOND);
-    })
-  );
   let max = 0;
   let min = 0;
   return (

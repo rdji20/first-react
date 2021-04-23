@@ -6,6 +6,7 @@ function DraymondDraymond() {
   const [dataDraymond, loading] = useFetch(
     "https://raw.githubusercontent.com/rdji20/data/master/nba-draymond/draymond.csv"
   );
+
   const size = 500;
   const scaleUp = 20;
   const startingPoint = size / 2;
