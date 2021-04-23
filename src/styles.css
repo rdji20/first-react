@@ -16,8 +16,9 @@ body {
   stroke: red !important;
 }
 
-p em {
+em {
   font-weight: 500;
+  background-color: #ccff00;
 }
 
 p {
