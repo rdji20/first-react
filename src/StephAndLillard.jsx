@@ -34,6 +34,31 @@ export default function ThreePointPercent() {
   );
   return (
     <svg width={size2} height={size} style={{ border: "1px solid black" }}>
+      <text x={size2 / 4} y={margin}>
+        {" "}
+        Three pointer shots attempted and made by Dame and Curry 2014-2019{" "}
+      </text>
+      <text
+        textAnchor="middle"
+        transform="translate(0,300) rotate(270)"
+        x={50}
+        y={margin}
+        fontSize={12}
+        fontWeight={200}
+      >
+        {" "}
+        Shots made
+      </text>
+      <text
+        fontWeight={200}
+        fontSize={12}
+        textAnchor="middle"
+        x={size2 / 2}
+        y={size - 10}
+      >
+        {" "}
+        Shots attempted
+      </text>
       {dataFantasyPlayers.map((measurement, index) => {
         let year = parseInt(measurement.year);
         let threeMade = parseFloat(measurement.fg3);
