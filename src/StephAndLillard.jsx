@@ -66,6 +66,10 @@ export default function ThreePointPercent() {
         let threeMade = parseFloat(measurement.fg3);
         let threeAtt = parseFloat(measurement.fg3a);
         let goodAverage = threeMade / threeAtt > 0.4;
+        let circleSize = Math.ceil((threeMade / threeAtt) * 15);
+        if (isNaN(circleSize)) {
+          circleSize = 0;
+        }
         if (year < yearFantasyFilter) {
           return;
         }
@@ -75,7 +79,7 @@ export default function ThreePointPercent() {
               key={index}
               cx={margin + parseFloat(measurement.fg3a)}
               cy={size - margin - parseFloat(measurement.fg3)}
-              r="5"
+              r={circleSize}
               fill={goodAverage ? "red" : "black"}
               stroke={goodAverage ? "red" : "black"}
               strokeOpacity="1"

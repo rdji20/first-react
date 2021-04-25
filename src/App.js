@@ -148,6 +148,11 @@ const App = () => {
           let threeMade = parseFloat(measurement.fg3);
           let threeAtt = parseFloat(measurement.fg3a);
           let goodAverage = threeMade / threeAtt > 0.4;
+          let circleSize = Math.ceil((threeMade / threeAtt) * 15);
+          if (isNaN(circleSize)) {
+            circleSize = 0;
+          }
+          console.log(circleSize);
           if (year < yearFantasyFilter) {
             return;
           }
@@ -157,7 +162,7 @@ const App = () => {
               key={index}
               cx={margin + parseFloat(measurement.fg3a)}
               cy={size - margin - parseFloat(measurement.fg3)}
-              r="5"
+              r={circleSize}
               fill="none"
               stroke={goodAverage ? "red" : "black"}
               strokeOpacity="0.3"
@@ -167,7 +172,7 @@ const App = () => {
         <circle
           cx={size2 - 250}
           cy={size - 50}
-          r="5"
+          r={5}
           fill="none"
           stroke={"red"}
           strokeOpacity="1"
