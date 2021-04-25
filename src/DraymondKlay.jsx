@@ -1,32 +1,30 @@
 import React from "react";
 import { useFetch } from "./hooks/useFetch";
-import * as d3 from "d3";
 
-export default function DraymondDraymond() {
+export default function KlayDraymond() {
   const [dataDraymond, loading] = useFetch(
     "https://raw.githubusercontent.com/rdji20/data/master/nba-draymond/draymond.csv"
   );
-
+  const player1 = "Klay Thompson";
   const size = 500;
   const scaleUp = 20;
   const startingPoint = size / 2;
-
   let max = 0;
   let min = 0;
   return (
     <svg width={400} height={size} style={{ border: "1px solid black" }}>
-      <text text-anchor="start" x={400 / 4 - 40} y="20">
-        DRAYMOND statistics for Draymond
+      <text text-anchor="start" x={400 / 4 - 80} y="20">
+        DRAYMOND statistics for Klay Thompson
       </text>
       <text text-anchor="start" x={400 / 4 - 40} y="40">
-        Green scale x20
+        Current Players scale x20
       </text>
 
       {dataDraymond.map((measurement, index) => {
         let moreThan10thPoss = measurement.possessions >= 4000;
         let value = parseFloat(measurement.DRAYMOND);
         let count = 0;
-        if (measurement.player == "Draymond Green") {
+        if (measurement.player == player1) {
           if (count == 0) {
             min = value;
             count++;
@@ -43,7 +41,7 @@ export default function DraymondDraymond() {
               id={measurement.player}
               x1={400 / 4}
               y1={size / 2 - value * scaleUp}
-              x2={400 / 4 + 400 / 2}
+              x2={400 / 4 + size / 2}
               y2={size / 2 - value * scaleUp}
               stroke={moreThan10thPoss ? "red" : "black"}
               strokeOpacity={0.3}

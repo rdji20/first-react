@@ -2,7 +2,7 @@ import React from "react";
 import { useFetch } from "./hooks/useFetch";
 import * as d3 from "d3";
 
-export default function ThreePointPercent() {
+export default function ThreePointPercentCjTh() {
   const [dataFantasyPlayers, loading2] = useFetch(
     "https://raw.githubusercontent.com/rdji20/first-react/main/nba_rank_by_year_tbl.csv"
   );
@@ -11,8 +11,8 @@ export default function ThreePointPercent() {
   const size2 = 1100;
   const margin = 30;
   const yearFantasyFilter = 2014;
-  const player1 = "Damian Lillard";
-  const player2 = "Stephen Curry";
+  const player1 = "CJ McCollum";
+  const player2 = "Klay Thompson";
 
   const maxThreeAtt = d3.max(
     dataFantasyPlayers.map((measurement) => {
@@ -38,7 +38,7 @@ export default function ThreePointPercent() {
     <svg width={size2} height={size} style={{ border: "1px solid black" }}>
       <text x={size2 / 4} y={margin}>
         {" "}
-        Three pointer shots attempted and made by Dame and Curry 2014-2019{" "}
+        Three pointer shots attempted and made by CJ and Klay 2014-2019{" "}
       </text>
       <text
         textAnchor="middle"

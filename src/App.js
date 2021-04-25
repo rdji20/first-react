@@ -1,9 +1,12 @@
 import React from "react";
 import { useFetch } from "./hooks/useFetch";
 import * as d3 from "d3";
-import PortlandDraymond from "./DameVsOthers";
+import PortlandDraymond from "./PortlandDraymond";
 import DraymondDraymond from "./Draymond";
 import ThreePointPercent from "./StephAndLillard";
+import ThreePointPercentCjTh from "./CjVsThompson";
+import CjDraymond from "./DraymondCj";
+import KlayDraymond from "./DraymondKlay";
 
 const App = () => {
   const [dataDraymond, loading] = useFetch(
@@ -59,7 +62,7 @@ const App = () => {
           DRAYMOND defense statistics
         </text>
         {dataDraymond.map((measurement, index) => {
-          let moreThan10thPoss = measurement.possessions >= 1000;
+          let moreThan10thPoss = measurement.possessions >= 4000;
           let value = parseFloat(measurement.DRAYMOND);
           return (
             <line
@@ -74,6 +77,24 @@ const App = () => {
             />
           );
         })}
+        <text
+          text-anchor="middle"
+          x={size / 4}
+          y={size - 50}
+          fill="red"
+          fontSize={10}
+        >
+          More than 4000 posessions
+        </text>
+        <text
+          text-anchor="middle"
+          x={(size * 3) / 4}
+          y={size - 50}
+          fill="black"
+          fontSize={10}
+        >
+          Less than 4000 posessions
+        </text>
         <text
           text-anchor="middle"
           x={size / 4 - 40}
@@ -94,6 +115,8 @@ const App = () => {
       </svg>
       <PortlandDraymond />
       <DraymondDraymond />
+      <CjDraymond />
+      <KlayDraymond />
       <svg width={size2} height={size} style={{ border: "1px solid black" }}>
         <text x={size2 / 4} y={margin}>
           {" "}
@@ -141,6 +164,40 @@ const App = () => {
             />
           );
         })}
+        <circle
+          cx={size2 - 250}
+          cy={size - 50}
+          r="5"
+          fill="none"
+          stroke={"red"}
+          strokeOpacity="1"
+        />
+        <text
+          text-anchor="begin"
+          x={size2 - 230}
+          y={size - 45}
+          fontSize={10}
+          fontWeight={200}
+        >
+          .40 Three point percentage or better
+        </text>
+        <circle
+          cx={size2 - 250}
+          cy={size - 70}
+          r="5"
+          fill="none"
+          stroke={"black"}
+          strokeOpacity="1"
+        />
+        <text
+          text-anchor="begin"
+          x={size2 - 230}
+          y={size - 65}
+          fontSize={10}
+          fontWeight={200}
+        >
+          less than .40 Three point percentage
+        </text>
         <text text-anchor="middle" x={20} y={size - maxThreeMade - margin}>
           {maxThreeMade}
         </text>
@@ -152,8 +209,9 @@ const App = () => {
         </text>
       </svg>
       <ThreePointPercent />
+      <ThreePointPercentCjTh />
 
-      <h1> Dame vs Curry coming soon ...</h1>
+      {/* <h1> Dame vs Curry coming soon ...</h1>
       <svg
         width="750"
         height="831"
@@ -241,8 +299,8 @@ const App = () => {
           y2="115"
           stroke="black"
           stroke-width="3"
-        />
-      </svg>
+        /> */}
+      {/* </svg> */}
     </div>
   );
 };
