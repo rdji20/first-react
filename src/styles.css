@@ -38,3 +38,25 @@ h1 {
 .more_1000 {
   color: red;
 }
+
+#frontpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu {
+  padding-left: 60px;
+}
+
+.menu a {
+  display: block;
+  margin: 10px;
+}
+
+.menu a:visited,
+.menu a:link {
+  color: #d90429;
+  text-decoration: none;
+  font-style: normal;
+}
