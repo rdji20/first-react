@@ -44,7 +44,7 @@ export default function ThreePointPercent() {
         textAnchor="middle"
         transform="translate(0,300) rotate(270)"
         x={50}
-        y={margin}
+        y={margin - 5}
         fontSize={12}
         fontWeight={200}
       >
@@ -61,6 +61,22 @@ export default function ThreePointPercent() {
         {" "}
         Shots attempted
       </text>
+      <line
+        x1={margin}
+        y1={size - margin}
+        x2={margin}
+        y2={size - maxThreeMade - margin}
+        stroke={"black"}
+        stroke-width="3"
+      />
+      <line
+        x1={margin}
+        y1={size - margin}
+        x2={maxThreeAtt + margin}
+        y2={size - margin}
+        stroke={"black"}
+        stroke-width="3"
+      />
       {dataFantasyPlayers.map((measurement, index) => {
         let year = parseInt(measurement.year);
         let threeMade = parseFloat(measurement.fg3);
