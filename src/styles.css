@@ -49,6 +49,8 @@ em {
 p {
   font-size: 15px;
   margin: 20px;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
 .ref {
@@ -58,6 +60,7 @@ p {
 
 h1 {
   text-align: center;
+  padding-top: 70px;
 }
 
 .more_1000 {
