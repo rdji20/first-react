@@ -13,10 +13,10 @@ export default function KlayDraymond() {
   let min = 0;
   return (
     <svg width={400} height={size} style={{ border: "1px solid black" }}>
-      <text text-anchor="start" x={400 / 4 - 80} y="20">
+      <text textAnchor="start" x={400 / 4 - 80} y="20">
         DRAYMOND statistics for Klay Thompson
       </text>
-      <text text-anchor="start" x={400 / 4 - 40} y="40">
+      <text textAnchor="start" x={400 / 4 - 40} y="40">
         Current Players scale x20
       </text>
 
@@ -52,7 +52,7 @@ export default function KlayDraymond() {
         }
       })}
       <text
-        text-anchor="middle"
+        textAnchor="middle"
         x={size / 5}
         y={size - 100}
         fill="red"
@@ -61,7 +61,7 @@ export default function KlayDraymond() {
         More than 4000 posessions
       </text>
       <text
-        text-anchor="middle"
+        textAnchor="middle"
         x={(size * 3) / 5}
         y={size - 100}
         fill="black"
@@ -70,20 +70,20 @@ export default function KlayDraymond() {
         Less than 4000 posessions
       </text>
       <text
-        text-anchor="middle"
+        textAnchor="middle"
         x={400 / 4 - 40}
         y={startingPoint - max * scaleUp}
       >
         {max}
       </text>
       <text
-        text-anchor="middle"
+        textAnchor="middle"
         x={400 / 4 - 40}
         y={startingPoint - min * scaleUp}
       >
         {min}
       </text>
-      <text text-anchor="middle" x={400 / 4 - 30} y={size / 2}>
+      <text textAnchor="middle" x={400 / 4 - 30} y={size / 2}>
         0
       </text>
     </svg>

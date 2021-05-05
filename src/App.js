@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "./hooks/useFetch";
 import * as d3 from "d3";
 import PortlandDraymond from "./PortlandDraymond";
@@ -31,6 +31,9 @@ const App = () => {
   );
   const minDraymond = d3.min(
     dataDraymond.map((measurement) => {
+      if (isNaN(measurement.DRAYMOND)) {
+        return 0;
+      }
       return parseFloat(measurement.DRAYMOND);
     })
   );
@@ -51,6 +54,9 @@ const App = () => {
   );
   const minThreeMade = d3.min(
     dataFantasyPlayers.map((measurement) => {
+      if (isNaN(measurement.fg3)) {
+        return 0;
+      }
       return parseFloat(measurement.fg3);
     })
   );
@@ -58,16 +64,19 @@ const App = () => {
   return (
     <div>
       <svg width={size} height={size} style={{ border: "1px solid black" }}>
-        <text text-anchor="start" x={size / 4 - 40} y="20">
+        <text textAnchor="start" x={size / 4 - 40} y="20">
           DRAYMOND defense statistics
         </text>
         {dataDraymond.map((measurement, index) => {
           let moreThan10thPoss = measurement.possessions >= 4000;
           let value = parseFloat(measurement.DRAYMOND);
+          if (isNaN(value)) {
+            value = 0;
+          }
           return (
             <line
               key={index}
-              id={measurement.player}
+              className={measurement.player}
               x1={size / 4}
               y1={size / 2 - value * scaleUp}
               x2={size / 4 + size / 2}
@@ -78,7 +87,7 @@ const App = () => {
           );
         })}
         <text
-          text-anchor="middle"
+          textAnchor="middle"
           x={size / 4}
           y={size - 50}
           fill="red"
@@ -87,7 +96,7 @@ const App = () => {
           More than 4000 posessions
         </text>
         <text
-          text-anchor="middle"
+          textAnchor="middle"
           x={(size * 3) / 4}
           y={size - 50}
           fill="black"
@@ -96,20 +105,20 @@ const App = () => {
           Less than 4000 posessions
         </text>
         <text
-          text-anchor="middle"
+          textAnchor="middle"
           x={size / 4 - 40}
           y={startingPoint - maxDraymond * scaleUp}
         >
           {maxDraymond}
         </text>
         <text
-          text-anchor="middle"
+          textAnchor="middle"
           x={size / 4 - 40}
           y={startingPoint - minDraymond * scaleUp}
         >
           {minDraymond}
         </text>
-        <text text-anchor="middle" x={size / 4 - 30} y={size / 2}>
+        <text textAnchor="middle" x={size / 4 - 30} y={size / 2}>
           0
         </text>
       </svg>
@@ -149,7 +158,7 @@ const App = () => {
           x2={margin}
           y2={size - maxThreeMade - margin}
           stroke={"black"}
-          stroke-width="3"
+          strokeWidth="3"
         />
         <line
           x1={margin + 10}
@@ -157,7 +166,7 @@ const App = () => {
           x2={maxThreeAtt + margin}
           y2={size - margin}
           stroke={"black"}
-          stroke-width="3"
+          strokeWidth="3"
         />
         {dataFantasyPlayers.map((measurement, index) => {
           let year = parseInt(measurement.year);
@@ -168,7 +177,6 @@ const App = () => {
           if (isNaN(circleSize)) {
             circleSize = 0;
           }
-          console.log(circleSize);
           if (year < yearFantasyFilter) {
             return;
           }
@@ -194,7 +202,7 @@ const App = () => {
           strokeOpacity="1"
         />
         <text
-          text-anchor="begin"
+          textAnchor="begin"
           x={size2 - 230}
           y={size - 45}
           fontSize={10}
@@ -211,7 +219,7 @@ const App = () => {
           strokeOpacity="1"
         />
         <text
-          text-anchor="begin"
+          textAnchor="begin"
           x={size2 - 230}
           y={size - 65}
           fontSize={10}
@@ -219,13 +227,13 @@ const App = () => {
         >
           less than .40 Three point percentage
         </text>
-        <text text-anchor="middle" x={20} y={size - maxThreeMade - margin}>
+        <text textAnchor="middle" x={20} y={size - maxThreeMade - margin}>
           {maxThreeMade}
         </text>
-        <text text-anchor="middle" x={20} y={size - 10}>
+        <text textAnchor="middle" x={20} y={size - 10}>
           {minThreeMade}
         </text>
-        <text text-anchor="middle" x={+maxThreeAtt + margin} y={size - 10}>
+        <text textAnchor="middle" x={maxThreeAtt + margin} y={size - 10}>
           {maxThreeAtt}
         </text>
       </svg>
@@ -247,7 +255,7 @@ const App = () => {
           height="713"
           fill="#262626"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <rect
           x="45"
@@ -263,7 +271,7 @@ const App = () => {
           r="360.5"
           fill="#D90429"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle
           cx="375"
@@ -271,7 +279,7 @@ const App = () => {
           r="88.5"
           fill="#793A3A"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <rect
           x="253.5"
@@ -280,7 +288,7 @@ const App = () => {
           height="287"
           fill="#793A3A"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <rect
           x="286.5"
@@ -289,7 +297,7 @@ const App = () => {
           height="287"
           fill="#D90429"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <circle cx="375" cy="194" r="61" fill="#C4C4C4" />
         <line
@@ -298,7 +306,7 @@ const App = () => {
           x2="420.011"
           y2="174.409"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <rect x="6" y="193" width="39" height="319" fill="#262626" />
         <rect x="705" y="176" width="37" height="319" fill="#262626" />
@@ -311,7 +319,7 @@ const App = () => {
           x2="706.5"
           y2="115"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         />
         <line
           x1="46.516"
@@ -319,7 +327,7 @@ const App = () => {
           x2="46.516"
           y2="115"
           stroke="black"
-          stroke-width="3"
+          strokeWidth="3"
         /> */}
       {/* </svg> */}
     </div>

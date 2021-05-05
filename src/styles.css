@@ -1,5 +1,30 @@
 body {
   font-family: "Roboto Mono", monospace;
+  margin: 0;
+}
+
+#main-title {
+  font-size: 80px;
+  padding-top: 80px;
+}
+
+#main-page div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#main-page img {
+  width: 33%;
+  align-self: center;
+  position: relative;
+  bottom: 100px;
+}
+
+#main-page h2 {
+  display: inline;
+  padding-left: 20%;
+  position: relative;
+  top: 100px;
 }
 
 #graphs {
@@ -46,17 +71,38 @@ h1 {
 }
 
 .menu {
-  padding-left: 60px;
+  transition: all 0.5s ease;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.sticky {
+  transition: all 0.5s ease;
+  background-color: #d90429;
 }
 
 .menu a {
-  display: block;
   margin: 10px;
+  font-size: 14px;
 }
 
 .menu a:visited,
 .menu a:link {
-  color: #d90429;
-  text-decoration: none;
+  color: white;
   font-style: normal;
+  text-decoration: none;
+  background-color: #202020;
+  width: auto;
+  padding: 5px;
+  border-radius: 0.5em;
+}
+
+.menu a:hover {
+  color: #d90429;
 }

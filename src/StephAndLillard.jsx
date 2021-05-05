@@ -67,7 +67,7 @@ export default function ThreePointPercent() {
         x2={margin}
         y2={size - maxThreeMade - margin}
         stroke={"black"}
-        stroke-width="3"
+        strokeWidth="3"
       />
       <line
         x1={margin}
@@ -75,7 +75,7 @@ export default function ThreePointPercent() {
         x2={maxThreeAtt + margin}
         y2={size - margin}
         stroke={"black"}
-        stroke-width="3"
+        strokeWidth="3"
       />
       {dataFantasyPlayers.map((measurement, index) => {
         let year = parseInt(measurement.year);
@@ -123,13 +123,13 @@ export default function ThreePointPercent() {
           );
         }
       })}
-      <text text-anchor="middle" x={20} y={size - maxThreeMade - margin}>
+      <text textAnchor="middle" x={20} y={size - maxThreeMade - margin}>
         {maxThreeMade}
       </text>
-      <text text-anchor="middle" x={20} y={size - 10}>
+      <text textAnchor="middle" x={20} y={size - 10}>
         {minThreeMade}
       </text>
-      <text text-anchor="middle" x={+maxThreeAtt + margin} y={size - 10}>
+      <text textAnchor="middle" x={+maxThreeAtt + margin} y={size - 10}>
         {maxThreeAtt}
       </text>
       <circle
@@ -140,7 +140,7 @@ export default function ThreePointPercent() {
         strokeOpacity="0.3"
       />
       <text
-        text-anchor="begin"
+        textAnchor="begin"
         x={size2 - 230}
         y={size - 45}
         fontSize={10}
@@ -156,7 +156,7 @@ export default function ThreePointPercent() {
         strokeOpacity="0.3"
       />
       <text
-        text-anchor="begin"
+        textAnchor="begin"
         x={size2 - 230}
         y={size - 65}
         fontSize={10}
