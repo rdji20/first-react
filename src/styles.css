@@ -100,7 +100,7 @@ h1 {
   color: white;
   font-style: normal;
   text-decoration: none;
-  background-color: #202020;
+  background-color: #262626;
   width: auto;
   padding: 5px;
   border-radius: 0.5em;
@@ -110,7 +110,8 @@ h1 {
   color: #d90429;
 }
 
-#root div {
+#root div,
+#nba-interactive div {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

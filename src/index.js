@@ -2,14 +2,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-// import UnderdogSvg from "./Cd";
+import UnderdogSvg from "./Cd";
 
 // function to initialize window
 (function () {
   // any module-globals (limit the use of these when possible)
+
   window.addEventListener("load", init);
   function init() {
     ReactDOM.render(<App />, document.querySelector("#root"));
+    ReactDOM.render(
+      <UnderdogSvg />,
+      document.querySelector("#nba-interactive")
+    );
     window.addEventListener("scroll", stickBar);
   }
 
@@ -35,4 +40,3 @@ import App from "./App";
     return document.createElement(elType);
   }
 })();
-//eactDOM.render(<UnderdogSvg />, document.querySelector("#logo"));
