@@ -3,6 +3,10 @@ import { useFetch } from "./hooks/useFetch";
 import * as d3 from "d3";
 
 const Cd = () => {
+  const [lillardShotDB, loading] = useFetch(
+    "https://raw.githubusercontent.com/rdji20/data/master/nba_shot_18to19_Dame.csv"
+  );
+
   return (
     <div>
       <svg width={1000} height={750} style={{ border: "1px solid black" }}>
@@ -111,6 +115,37 @@ const Cd = () => {
             stroke-width="3"
           />
         </svg>
+        <text id="made-shots-btn" x={600} y={700} fill={"grey"} fontSize={20}>
+          Just Made Shots
+        </text>
+        {lillardShotDB.map((measurement, index) => {
+          let thisYposition = parseFloat(measurement.svg_relative_position_y);
+          let shotArea =
+            "" +
+            measurement.SHOT_ZONE_AREA.replace(/\s/g, "-") +
+            measurement.SHOT_ZONE_RANGE.replace(/\s/g, "-");
+
+          return (
+            <circle
+              key={index}
+              className={shotArea}
+              cx={measurement.svg_relative_position_x}
+              cy={thisYposition - 10}
+              r={5}
+              fill={"white"}
+              opacity="0.5"
+              stroke={"white"}
+              strokeOpacity="0.3"
+            />
+          );
+        })}
+        <image
+          id="jharden"
+          x="800"
+          href="https://rdji20.github.io/img/james_harden.JPG"
+          width="200"
+          height="200"
+        />
       </svg>
     </div>
   );

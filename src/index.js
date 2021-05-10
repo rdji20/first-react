@@ -16,6 +16,7 @@ import UnderdogSvg from "./Cd";
       document.querySelector("#nba-interactive")
     );
     window.addEventListener("scroll", stickBar);
+    id("jharden").addEventListener("click", displayHarden);
   }
 
   function stickBar() {
@@ -23,8 +24,8 @@ import UnderdogSvg from "./Cd";
     menu.classList.toggle("sticky", window.scrollY > 0);
   }
 
-  function checkWork() {
-    console.log("I am working");
+  function displayHarden() {
+    this.classList.toggle("clicked-img");
   }
 
   function id(idName) {
