@@ -127,7 +127,7 @@ h1 {
 
 #jharden:hover {
   transition: all 0.1s ease;
-  opacity: 0.6;
+  opacity: 1;
 }
 #jharden:active {
   transform: translateY(4px);
@@ -135,10 +135,11 @@ h1 {
 
 .clicked-img {
   transition: all 0.1s ease;
-  opacity: 0.6 !important;
+  opacity: 1 !important;
 }
 
 #jharden {
+  opacity: 0.6;
 }
 
 #made-shots-btn {
@@ -156,13 +157,83 @@ h1 {
   display: none;
 }
 
-#message-count {
+#message-cont {
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-#message-count p {
-  color: #d90429;
-  justify-self: center;
-  align-self: center;
-  font-size: 20px;
+#message-cont p {
+  font-size: 40px;
+  padding-top: 30px;
+  font-family: "Bebas Neue", cursive;
+  position: relative;
+  right: 100px;
+}
+
+.slidecontainer {
+  width: 60%; /* Width of the outside container */
+  padding: 5px;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 80%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #262626; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #d90429; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #d90429; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+#top-inter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#btn-container {
+  width: 80%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#btn-container button {
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  border-radius: 0.5em;
+  border: #262626 solid 3px;
+}
+
+.info-mess {
+  color: #262626;
+  font-family: "Roboto Mono", monospace;
+  font-size: 25px;
 }

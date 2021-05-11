@@ -12,6 +12,12 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,500;0,700;1,200&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+
     <title>UD Analysis</title>
   </head>
   <body>
@@ -157,8 +163,26 @@
       <p>
         These are all shots Damian Lillard took during the 2018-19 NBA season.
         Click on the word "Just made shots" to see made shots. Click on the
-        image of James Harden to compare the shots between both the players.
+        image of James Harden to compare the shots between players.
       </p>
+      <div id="top-inter">
+        <div class="slidecontainer">
+          <input
+            type="range"
+            min="0"
+            max="4"
+            value="0"
+            class="slider"
+            id="quarter-range"
+          />
+        </div>
+        <!-- <div id="btn-container">
+          <button></button>
+          <button></button>
+          <button id="clear-selected">clear</button>
+        </div> -->
+      </div>
+      <p><span class="info-mess">Full game shots</span></p>
       <div id="message-cont"></div>
       <div id="nba-interactive"></div>
     </section>

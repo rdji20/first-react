@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import UnderdogSvg from "./Cd";
 
-// function to initialize window
 (function () {
   // any module-globals (limit the use of these when possible)
 
@@ -18,8 +17,20 @@ import UnderdogSvg from "./Cd";
     window.addEventListener("scroll", stickBar);
     id("jharden").addEventListener("click", displayHarden);
     id("made-shots-btn").addEventListener("click", displayMade);
+    id("quarter-range").addEventListener("input", displayQuarter);
   }
 
+  function displayQuarter() {
+    if (this.value == 0) {
+      qs(".info-mess").textContent = "Full game shots";
+    } else {
+      qs(".info-mess").textContent = "Quarter " + this.value + " shots";
+    }
+  }
+
+  /**
+   * Creates sticky menu bar
+   */
   function stickBar() {
     let menu = qs(".menu");
     menu.classList.toggle("sticky", window.scrollY > 0);
@@ -36,6 +47,8 @@ import UnderdogSvg from "./Cd";
   }
 
   function displayMade() {
+    let container = document.getElementById("message-cont");
+    container.innerHTML = "";
     this.classList.toggle("made-text");
     let missedShots = qsa(".Missed-Shot");
     for (let i = 0; i < missedShots.length; i++) {

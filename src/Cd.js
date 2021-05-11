@@ -7,11 +7,25 @@ const Cd = () => {
   const [lillardShotDB, loading] = useFetch(
     "https://raw.githubusercontent.com/rdji20/data/master/nba_shot_18to19_Dame.csv"
   );
-  const [selectedShot, setShot] = useState("");
+  const [shot, setShot] = useState("");
+
+  function changeBackground(e) {
+    e.target.style.fill = "steelblue";
+    e.target.style.stroke = "steelblue";
+    e.target.style.opacity = 1;
+    e.target.style.r = 8;
+  }
+
+  function returnBackground(e) {
+    e.target.style.fill = "white";
+    e.target.style.stroke = "white";
+    e.target.style.r = 5;
+    e.target.style.opacity = 0.4;
+  }
 
   return (
     <div>
-      <svg width={1000} height={750} style={{ border: "1px solid black" }}>
+      <svg width={1000} height={750} style={{ border: "3px solid black" }}>
         <svg
           width="798"
           height="854"
@@ -134,21 +148,33 @@ const Cd = () => {
             measurement.MINUTES_REMAINING +
             " Seconds remaining: " +
             measurement.SECONDS_REMAINING;
-          //const highlight = measurement.SHOT_ZONE_AREA === setShot;
+          const highlight = measurement.ACTION_TYPE === shot;
           return (
             <circle
               key={index}
-              // onClick={() => {
-              //   setShot(measurement.SHOT_ZONE_AREA);
-              // }}
+              onMouseEnter={changeBackground}
+              onMouseLeave={returnBackground}
+              onClick={() => {
+                if (shot == measurement.ACTION_TYPE) {
+                  setShot("none");
+                } else {
+                  setShot(measurement.ACTION_TYPE);
+                }
+                let message = document.createElement("p");
+                let container = document.getElementById("message-cont");
+                message.style.color = "blue";
+                container.innerHTML = "";
+                container.appendChild(message);
+                message.textContent = "Shot type:  " + measurement.ACTION_TYPE;
+              }}
               className={shotArea}
               cx={measurement.svg_relative_position_x}
               cy={thisYposition - 10}
               r={5}
-              fill={"white"}
+              fill={highlight ? "blue" : "white"}
               opacity="0.4"
               stroke={"white"}
-              strokeOpacity="0.4"
+              strokeOpacity={highlight ? 1.0 : 0.4}
             >
               <title>{title}</title>
             </circle>

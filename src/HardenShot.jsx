@@ -6,6 +6,8 @@ export default function HardenShot18() {
     "https://raw.githubusercontent.com/rdji20/data/master/nba_shot_18to19_Beard.csv"
   );
 
+  const [shot, setShot] = useState("none");
+
   function changeBackground(e) {
     e.target.style.fill = "#d90429";
     e.target.style.stroke = "white";
@@ -35,6 +37,8 @@ export default function HardenShot18() {
       " Seconds remaining: " +
       measurement.SECONDS_REMAINING;
 
+    const highlight = measurement.ACTION_TYPE === shot;
+
     return (
       <circle
         key={index}
@@ -42,17 +46,22 @@ export default function HardenShot18() {
         onMouseLeave={returnBackground}
         className={shotArea}
         onClick={() => {
+          if (shot == measurement.ACTION_TYPE) {
+            setShot("none");
+          } else {
+            setShot(measurement.ACTION_TYPE);
+          }
           let message = document.createElement("p");
           let container = document.getElementById("message-cont");
+          message.style.color = "red";
           container.innerHTML = "";
-          message.style.color = "#d90429";
           container.appendChild(message);
-          message.textContent = measurement.ACTION_TYPE;
+          message.textContent = "Shot type:  " + measurement.ACTION_TYPE;
         }}
         cx={measurement.svg_relative_position_x}
         cy={measurement.svg_relative_position_y - 10}
         r={5}
-        fill={"yellow"}
+        fill={highlight ? "red" : "yellow"}
         opacity="0.4"
         stroke={"yellow"}
         strokeOpacity="0.4"
