@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useFetch } from "./hooks/useFetch";
 import * as d3 from "d3";
+import HardenShot18 from "./HardenShot";
 
 const Cd = () => {
   const [lillardShotDB, loading] = useFetch(
     "https://raw.githubusercontent.com/rdji20/data/master/nba_shot_18to19_Dame.csv"
   );
+  const [selectedShot, setShot] = useState("");
 
   return (
     <div>
@@ -24,7 +26,7 @@ const Cd = () => {
             height="747"
             fill="#262626"
             stroke="#262626"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <mask id="path-2-inside-1" fill="white">
             <path d="M494.5 301C494.5 313.344 492.023 325.568 487.211 336.972C482.4 348.377 475.347 358.739 466.455 367.468C457.564 376.197 447.009 383.121 435.392 387.845C423.775 392.569 411.324 395 398.75 395C386.176 395 373.725 392.569 362.108 387.845C350.491 383.121 339.936 376.197 331.045 367.468C322.153 358.739 315.1 348.377 310.289 336.972C305.477 325.568 303 313.344 303 301L398.75 301H494.5Z" />
@@ -33,7 +35,7 @@ const Cd = () => {
             d="M494.5 301C494.5 313.344 492.023 325.568 487.211 336.972C482.4 348.377 475.347 358.739 466.455 367.468C457.564 376.197 447.009 383.121 435.392 387.845C423.775 392.569 411.324 395 398.75 395C386.176 395 373.725 392.569 362.108 387.845C350.491 383.121 339.936 376.197 331.045 367.468C322.153 358.739 315.1 348.377 310.289 336.972C305.477 325.568 303 313.344 303 301L398.75 301H494.5Z"
             fill="#262626"
             stroke="white"
-            stroke-width="6"
+            strokeWidth="6"
             mask="url(#path-2-inside-1)"
           />
           <rect
@@ -43,7 +45,7 @@ const Cd = () => {
             height="300"
             fill="#262626"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <rect
             x="304.5"
@@ -52,7 +54,7 @@ const Cd = () => {
             height="300"
             fill="#262626"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <mask id="path-5-inside-2" fill="white">
             <path d="M460 81C460 97.1782 453.573 112.694 442.134 124.133C430.694 135.573 415.178 142 399 142C382.822 142 367.306 135.573 355.866 124.133C344.427 112.694 338 97.1782 338 81L399 81H460Z" />
@@ -61,7 +63,7 @@ const Cd = () => {
             d="M460 81C460 97.1782 453.573 112.694 442.134 124.133C430.694 135.573 415.178 142 399 142C382.822 142 367.306 135.573 355.866 124.133C344.427 112.694 338 97.1782 338 81L399 81H460Z"
             fill="#262626"
             stroke="white"
-            stroke-width="6"
+            strokeWidth="6"
             mask="url(#path-5-inside-2)"
           />
           <line
@@ -70,7 +72,7 @@ const Cd = () => {
             x2="444.011"
             y2="64.4091"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <line
             x1="749.4"
@@ -78,7 +80,7 @@ const Cd = () => {
             x2="749.5"
             y2="0.999298"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <line
             x1="45.6"
@@ -86,7 +88,7 @@ const Cd = () => {
             x2="45.5123"
             y2="3.00063"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
           />
           <mask id="path-9-inside-3" fill="white">
             <path d="M500.5 757.75C500.5 745.176 498.023 732.725 493.211 721.108C488.4 709.491 481.347 698.936 472.455 690.044C463.564 681.153 453.009 674.1 441.392 669.289C429.775 664.477 417.324 662 404.75 662C392.176 662 379.725 664.477 368.108 669.289C356.491 674.1 345.936 681.153 337.045 690.044C328.153 698.936 321.1 709.491 316.289 721.108C311.477 732.725 309 745.176 309 757.75L404.75 757.75H500.5Z" />
@@ -94,9 +96,9 @@ const Cd = () => {
           <path
             d="M500.5 757.75C500.5 745.176 498.023 732.725 493.211 721.108C488.4 709.491 481.347 698.936 472.455 690.044C463.564 681.153 453.009 674.1 441.392 669.289C429.775 664.477 417.324 662 404.75 662C392.176 662 379.725 664.477 368.108 669.289C356.491 674.1 345.936 681.153 337.045 690.044C328.153 698.936 321.1 709.491 316.289 721.108C311.477 732.725 309 745.176 309 757.75L404.75 757.75H500.5Z"
             fill="#C4C4C4"
-            fill-opacity="0.01"
+            fillOpacity="0.01"
             stroke="white"
-            stroke-width="6"
+            strokeWidth="6"
             mask="url(#path-9-inside-3)"
           />
           <path
@@ -112,7 +114,7 @@ const Cd = () => {
           <path
             d="M45 210.5C187.5 541 627 523.5 749 214"
             stroke="white"
-            stroke-width="3"
+            strokeWidth="3"
           />
         </svg>
         <text id="made-shots-btn" x={600} y={700} fill={"grey"} fontSize={20}>
@@ -120,25 +122,39 @@ const Cd = () => {
         </text>
         {lillardShotDB.map((measurement, index) => {
           let thisYposition = parseFloat(measurement.svg_relative_position_y);
-          let shotArea =
-            "" +
+          let areaRange =
             measurement.SHOT_ZONE_AREA.replace(/\s/g, "-") +
             measurement.SHOT_ZONE_RANGE.replace(/\s/g, "-");
-
+          let shotArea =
+            "" + areaRange + " " + measurement.EVENT_TYPE.replace(/\s/g, "-");
+          let title =
+            "Quarter: " +
+            measurement.PERIOD +
+            " Minutes remaining: " +
+            measurement.MINUTES_REMAINING +
+            " Seconds remaining: " +
+            measurement.SECONDS_REMAINING;
+          //const highlight = measurement.SHOT_ZONE_AREA === setShot;
           return (
             <circle
               key={index}
+              // onClick={() => {
+              //   setShot(measurement.SHOT_ZONE_AREA);
+              // }}
               className={shotArea}
               cx={measurement.svg_relative_position_x}
               cy={thisYposition - 10}
               r={5}
               fill={"white"}
-              opacity="0.5"
+              opacity="0.4"
               stroke={"white"}
-              strokeOpacity="0.3"
-            />
+              strokeOpacity="0.4"
+            >
+              <title>{title}</title>
+            </circle>
           );
         })}
+        <HardenShot18 />
         <image
           id="jharden"
           x="800"

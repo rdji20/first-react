@@ -17,6 +17,7 @@ import UnderdogSvg from "./Cd";
     );
     window.addEventListener("scroll", stickBar);
     id("jharden").addEventListener("click", displayHarden);
+    id("made-shots-btn").addEventListener("click", displayMade);
   }
 
   function stickBar() {
@@ -25,7 +26,21 @@ import UnderdogSvg from "./Cd";
   }
 
   function displayHarden() {
+    let container = document.getElementById("message-cont");
+    container.innerHTML = "";
     this.classList.toggle("clicked-img");
+    let beardShots = qsa(".beard-shots");
+    for (let i = 0; i < beardShots.length; i++) {
+      beardShots[i].classList.toggle("hidden");
+    }
+  }
+
+  function displayMade() {
+    this.classList.toggle("made-text");
+    let missedShots = qsa(".Missed-Shot");
+    for (let i = 0; i < missedShots.length; i++) {
+      missedShots[i].classList.toggle("showMade");
+    }
   }
 
   function id(idName) {

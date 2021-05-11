@@ -126,7 +126,7 @@ h1 {
 }
 
 #jharden:hover {
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
   opacity: 0.6;
 }
 #jharden:active {
@@ -134,13 +134,35 @@ h1 {
 }
 
 .clicked-img {
-  transition: all 0.5s ease;
+  transition: all 0.1s ease;
   opacity: 0.6 !important;
 }
 
 #jharden {
-  transition: all 0.5s ease;
 }
 
-.made-shots-btn {
+#made-shots-btn {
+}
+
+.made-text {
+  fill: greenyellow;
+}
+
+.hidden {
+  display: none;
+}
+
+.showMade {
+  display: none;
+}
+
+#message-count {
+  display: flex;
+}
+
+#message-count p {
+  color: #d90429;
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
 }
