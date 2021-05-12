@@ -251,4 +251,9 @@ h1 {
   left: 33%;
   border: #262626 solid 3px;
   border-radius: 2em;
+  z-index: -1;
+}
+
+#interactive p {
+  padding-top: 20px;
 }
