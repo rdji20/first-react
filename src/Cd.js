@@ -136,11 +136,12 @@ const Cd = () => {
         </text>
         {lillardShotDB.map((measurement, index) => {
           let thisYposition = parseFloat(measurement.svg_relative_position_y);
-          let areaRange =
-            measurement.SHOT_ZONE_AREA.replace(/\s/g, "-") +
-            measurement.SHOT_ZONE_RANGE.replace(/\s/g, "-");
+
           let shotArea =
-            "" + areaRange + " " + measurement.EVENT_TYPE.replace(/\s/g, "-");
+            "q" +
+            measurement.PERIOD +
+            " " +
+            measurement.EVENT_TYPE.replace(/\s/g, "-");
           let title =
             "Quarter: " +
             measurement.PERIOD +

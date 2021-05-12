@@ -153,6 +153,10 @@ h1 {
   display: none;
 }
 
+.hidden-harden {
+  display: none;
+}
+
 .showMade {
   display: none;
 }
@@ -236,4 +240,15 @@ h1 {
   color: #262626;
   font-family: "Roboto Mono", monospace;
   font-size: 25px;
+  position: relative;
+  right: 100px;
+  padding-top: 10px;
+}
+
+#interactive img {
+  width: 33%;
+  position: relative;
+  left: 33%;
+  border: #262626 solid 3px;
+  border-radius: 2em;
 }

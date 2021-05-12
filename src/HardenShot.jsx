@@ -25,9 +25,10 @@ export default function HardenShot18() {
       measurement.SHOT_ZONE_AREA.replace(/\s/g, "-") +
       measurement.SHOT_ZONE_RANGE.replace(/\s/g, "-");
     let shotArea =
-      "" +
-      areaRange +
-      " beard-shots hidden " +
+      "beard-shots hidden-harden " +
+      " q" +
+      measurement.PERIOD +
+      " " +
       measurement.EVENT_TYPE.replace(/\s/g, "-");
     let title =
       "Quarter: " +
