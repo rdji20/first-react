@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
       rel="stylesheet"
     />
-
+    <script src="src/index.js"></script>
     <title>UD Analysis</title>
   </head>
   <body>
@@ -121,108 +121,6 @@
     </div>
     <section id="graphs">
       <div id="root"></div>
-    </section>
-    <p>
-      In the beginning I realized that the DRAYMOND had too high and too low
-      values, so I had to go back and do a sanity check and see whay was this.
-      In the sanity check I found out that DRAYMOND is calculated depending on
-      posessions, and there are going to be players that had few amount of
-      defending posessions. The type of plays that these type of players have,
-      is when the team is losing a by high amount of points and the Team puts
-      the bench in (These outlier players being in the second team most of the
-      times). Then by checking if Portland has a player that can be a good
-      defensive player with average first team posessions, I found out that
-      Derrick Jones Jr. has the potential to do so because of his ~ 3 DRAYMOND
-      in 2019 with at least 4000 defensive posessions. My fourther analysis on
-      Jones Jr. has to be if he can bring Portland the ofensive mindset Green
-      had in that Golden State 2014 season as well. <br />
-      <br />
-      Anlaysing Portland guards, I got a little dissapointed since I thought
-      that our guard pair was almost as good as Curry and Thompsons partnership.
-      First, Dame hasn't had a season with above .4 in three pointer attempts
-      while Stephen has had .4 percentage in all seasons from 2014 to 2019. Dame
-      started solid this season with almost .48 on 3-pt shooting, but as
-      expected by the phenomenon of "regresion to the mean", Lillard has been
-      shooting bad percentages from deep for the past 10 or more games. Then
-      making a comparisson between CJ and Klay, we can see that Klay wins in
-      both categories, 3pt and DRAYMOND. In this analysis we can see that we
-      cannot approach the same playing style as Golden State had that 2014
-      season since we don't have the resources to do so. Portland team should
-      lower their 3pt shot attempts and instead go for the 2pt posession. Also,
-      As much as Damian is our All Star, I think that he should get less
-      ofensive 3pt posessions for the upcoming games since, backing on stats, we
-      know that his shot is slowly returning to his career average, which can
-      damage the team's field goal percentage. Instead since the oposition is
-      still going to be defending his 3pt shot, he should bring the double-team
-      to him and look for an assist for his teammates.
-    </p>
-
-    <script src="src/index.js"></script>
-    <section id="interactive">
-      <img
-        src="/src/img/dame_driving.jpeg"
-        alt="Damian lillard driving to the basket"
-      />
-      <h1>Damian Lillard's shot comparisson chart 2018-19</h1>
-      <p>
-        These are all shots Damian Lillard took during the 2018-19 NBA season.
-        Click on the word "Just made shots" to see made shots. Click on the
-        image of James Harden to compare the shots between players.
-      </p>
-      <div id="top-inter">
-        <p><span class="info-mess">Full game shots</span></p>
-        <div class="slidecontainer">
-          <input
-            type="range"
-            min="0"
-            max="5"
-            value="0"
-            class="slider"
-            id="quarter-range"
-          />
-        </div>
-        <!-- <div id="btn-container">
-          <button></button>
-          <button></button>
-          <button id="clear-selected">clear</button>
-        </div> -->
-      </div>
-      <div id="message-cont"></div>
-      <div id="nba-interactive"></div>
-      <p>
-        I knew from the beginning that I needed a map chart of Lillard’s shots
-        to see his development in a playoff environment so I needed to choose
-        Portland’s best season with Lillard (2019-19) when they knocked OKC with
-        the famous Lillard shot. I needed to compare his shots with someone who
-        played well that same season and that is why I chose James Harden from
-        the Nets (He was with the Rockets that season). In the visualization I
-        thought on using triangles for Harden and circles for LIllard instead of
-        using color to differentiate between them; but since I wanted to show
-        also spatial relationship between the shots, I realized that having
-        another shape would confuse the viewer on where exactly that shot was
-        shot in relations with the other data points. Choosing what to do was
-        not really hard because I understood what I wanted to know about this
-        data: Where Lillard shoots the most shots, what type of shot Lillard
-        makes in some area of the court, how it is compared with Harden, volume
-        of shots made vs attempted, etc. I also wanted to make the user feel the
-        liberty of toggling between showing both players or just Lillard shots;
-        as well as clustering the shots by quarter to see when that player is
-        more reliable. I also had to make a formula to fit the data in my
-        basketball court svg by converting ft and meters to pixels, as well as
-        creating an svg which I know that is scaled to the real nba half court.
-        <br />
-        <br />
-        Since I want these assignments to be part of my personal portfolio I
-        chose to work alone and in the beginning it was hard to visualize when
-        to use React app.js and when to use my index.js page to add event
-        listeners but in the end I realized that whenever the interaction is
-        directly with each data set (Harden and Lillard shots) I needed to do my
-        work in React; and when I needed to generalize, I could use my index.js
-        page to add event listeners in vanilla js. I probably took between 20 to
-        35 people hours in making this interactive data vis. I think that what
-        took me most time was to debug cascading problems, because I was working
-        in many different files.
-      </p>
     </section>
   </body>
 </html>
