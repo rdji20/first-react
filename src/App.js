@@ -7,11 +7,12 @@ import ThreePointPercent from "./StephAndLillard";
 import ThreePointPercentCjTh from "./CjVsThompson";
 import CjDraymond from "./DraymondCj";
 import KlayDraymond from "./DraymondKlay";
-import AnalysisParagraph from "./paragraphs/ExpAnP";
 import UnderdogSvg from "./Cd";
 import DraymondAllStats from "./AllPlayersDraymond";
 import AllPlayersThrees from "./AllPlayersThrees";
 import InteractionAnalysisMessage from "./paragraphs/InteractionAnalysisMessage";
+import Presentation from "./paragraphs/Presentation";
+import SHOTwer from "./SHOTwer";
 
 const App = () => {
   const [dataDraymond, loading] = useFetch(
@@ -62,24 +63,32 @@ const App = () => {
 
   return (
     <div>
-      <DraymondAllStats
-        dataDraymond={draymond.data}
-        max={draymond.max}
-        min={draymond.min}
-      />
-      <PortlandDraymond />
-      <DraymondDraymond />
-      <CjDraymond />
-      <KlayDraymond />
-      <AllPlayersThrees
-        data={dataFantasyPlayers}
-        minThree={minThreeMade}
-        maxThreeMade={maxThreeMade}
-        maxThreeAtt={maxThreeAtt}
-      />
-      <ThreePointPercent />
-      <ThreePointPercentCjTh />
-      <AnalysisParagraph />
+      <h1 id="title-shw">SHOTwer comparisson shot between players</h1>
+      <div>
+        <SHOTwer />
+      </div>
+      <div id="dashboard">
+        <Presentation />
+        <div id="graphs">
+          <DraymondAllStats
+            dataDraymond={draymond.data}
+            max={draymond.max}
+            min={draymond.min}
+          />
+          <PortlandDraymond />
+          <DraymondDraymond />
+          <CjDraymond />
+          <KlayDraymond />
+          <AllPlayersThrees
+            data={dataFantasyPlayers}
+            minThree={minThreeMade}
+            maxThreeMade={maxThreeMade}
+            maxThreeAtt={maxThreeAtt}
+          />
+          <ThreePointPercent />
+          <ThreePointPercentCjTh />
+        </div>
+      </div>
       <section id="interactive">
         {/* <img
           src="img/dame_driving.jpeg"

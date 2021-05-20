@@ -12,7 +12,6 @@ const Cd = () => {
   const [dataHarden, loading2] = useFetch(
     "https://raw.githubusercontent.com/rdji20/data/master/nba_shot_18to19_Beard.csv"
   );
-  const [shot, setShot] = useState("");
   const [beardEnabled, setBeardEnabled] = useState(false);
   const [made, setMade] = useState(false);
   const [quarter, setQuarter] = useState(0);

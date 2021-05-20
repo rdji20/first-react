@@ -28,16 +28,6 @@ body {
   top: 100px;
 }
 
-#graphs {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-#graphs div {
-  margin: 20px;
-}
-
 .outlier {
   stroke: red !important;
 }
@@ -109,17 +99,6 @@ h1 {
 
 .menu a:hover {
   color: #d90429;
-}
-
-#root div,
-#nba-interactive div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#root svg {
-  margin: 20px;
 }
 
 #interactive {
@@ -236,4 +215,60 @@ h1 {
   background-color: #c6a27e;
   border-radius: 1em;
   border: 4px solid black;
+}
+
+#presentation {
+  width: 37%;
+  font-size: 18px;
+  display: inline-block;
+}
+
+#graphs {
+  width: 63%;
+  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#dashboard {
+  display: flex;
+  align-items: flex-start;
+}
+
+#shotwer {
+  display: flex;
+}
+
+.control-box {
+  width: 45%;
+}
+
+.control-box h2 {
+  padding-top: 20px;
+  padding-left: 60px;
+}
+
+.shw-btns {
+  margin: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.shw-btns button {
+  width: 10%;
+  margin: 5px;
+  padding: 25px;
+  border-radius: 10em;
+  font-size: 20px;
+  text-align: center;
+}
+
+.player-search {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
+#shotwer {
+  padding-top: 80px;
 }
