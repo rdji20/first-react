@@ -71,6 +71,22 @@ const App = () => {
       <div>
         <SHOTwer data={allPlayersData} />
       </div>
+      <h1> The SHOTwer </h1>
+      <p>
+        {" "}
+        SHOTwer is a anlysis tool intended to compare two NBA players type of
+        shots and shot distribution. It can be used as an exploratory analysis
+        visualization of the NBA shot stats database, to make an analysis on a
+        specific type of player depending on their shot, among other analysis.
+        The intention of this tool is to show the data points in a way that the
+        user can visually space the shots taken in consideration. In this
+        version we can filter by zone, time span, and weather the shot was made
+        or not. We can see the shots of just one player or make the comparison
+        between the two entities by overlapping the second player data points on
+        top of the first player's shots. When hovering on the data points, we
+        show the name of the player who made that shot, the type of shot, and
+        the minutes and seconds remaining when that shot was attempted.
+      </p>
       <h1>Portland TrailBlazers Research</h1>
       <div id="dashboard">
         <Presentation />
