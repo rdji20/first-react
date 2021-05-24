@@ -31,10 +31,10 @@ export default function Player1(props) {
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"white"}
-            opacity="0.4"
-            stroke={"white"}
-            strokeOpacity="0.4"
+            fill={"#17EEB8"}
+            opacity="0.35"
+            stroke={"#17EEB8"}
+            strokeOpacity="0.35"
           ></circle>
         );
       } else if (parseInt(measurement.PERIOD) == quarteState) {
@@ -46,10 +46,10 @@ export default function Player1(props) {
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"white"}
-            opacity="0.4"
-            stroke={"white"}
-            strokeOpacity="0.4"
+            fill={"#17EEB8"}
+            opacity="0.35"
+            stroke={"#17EEB8"}
+            strokeOpacity="0.35"
           ></circle>
         );
       } else {

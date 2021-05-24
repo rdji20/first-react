@@ -67,7 +67,7 @@ const App = () => {
 
   return (
     <div>
-      <h1 id="title-shw">SHOTwer comparisson shot between players</h1>
+      <h1 id="title-shw">SHOTwer comparison shot between players</h1>
       <div>
         <SHOTwer data={allPlayersData} />
       </div>
