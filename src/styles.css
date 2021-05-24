@@ -275,6 +275,7 @@ h1 {
   text-align: center;
   background-color: white;
   color: black;
+  box-shadow: 2px 3px 2px 1px #888888;
 }
 
 .player-search {
@@ -339,7 +340,8 @@ fieldset legend {
 
 #apply-btn:hover,
 fieldset button:hover,
-#allz-btn:hover {
+#allz-btn:hover,
+.shw-btns button:hover {
   background-color: #262626;
   color: white;
 }
