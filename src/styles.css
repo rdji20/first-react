@@ -373,3 +373,7 @@ fieldset button:hover,
   margin-left: 30%;
   padding: 10px;
 }
+
+#eda-title {
+  margin-top: 70px;
+}
