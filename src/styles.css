@@ -316,6 +316,17 @@ fieldset button {
   box-shadow: 2px 3px 2px 1px #888888;
 }
 
+.p1-input {
+  border: #262626 solid 3px;
+  padding: 5px;
+}
+
+.p2-input {
+  background-color: yellow;
+  border: #262626 solid 3px;
+  padding: 5px;
+}
+
 fieldset input {
   font-size: 18px;
 }

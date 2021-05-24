@@ -56,6 +56,7 @@ export default function SHOTwer(props) {
               <legend>Search Players</legend>
               <div>
                 <input
+                  className="p1-input"
                   onChange={(e) => {
                     setShotwerQ(0);
                     setApply1(false);
@@ -67,6 +68,7 @@ export default function SHOTwer(props) {
               </div>
               <div>
                 <input
+                  className="p2-input"
                   onChange={(e) => {
                     setShotwerQ(0);
                     setApply2(false);
@@ -82,9 +84,13 @@ export default function SHOTwer(props) {
           </form>
         </div>
         <h2>Time span</h2>
-        <h3>{"Current quarter: " + shotwerQ}</h3>
         <div className="shw-btns">
           <button
+            style={
+              shotwerQ == 0
+                ? { backgroundColor: "#d90429" }
+                : { backgroundColor: "white" }
+            }
             onClick={() => {
               setShotwerQ(0);
             }}
@@ -92,6 +98,11 @@ export default function SHOTwer(props) {
             All
           </button>
           <button
+            style={
+              shotwerQ == 1
+                ? { backgroundColor: "#d90429" }
+                : { backgroundColor: "white" }
+            }
             onClick={() => {
               setShotwerQ(1);
             }}
@@ -99,6 +110,11 @@ export default function SHOTwer(props) {
             1st
           </button>
           <button
+            style={
+              shotwerQ == 2
+                ? { backgroundColor: "#d90429" }
+                : { backgroundColor: "white" }
+            }
             onClick={() => {
               setShotwerQ(2);
             }}
@@ -106,6 +122,11 @@ export default function SHOTwer(props) {
             2nd
           </button>
           <button
+            style={
+              shotwerQ == 3
+                ? { backgroundColor: "#d90429" }
+                : { backgroundColor: "white" }
+            }
             onClick={() => {
               setShotwerQ(3);
             }}
@@ -113,6 +134,11 @@ export default function SHOTwer(props) {
             3rd
           </button>
           <button
+            style={
+              shotwerQ == 4
+                ? { backgroundColor: "#d90429" }
+                : { backgroundColor: "white" }
+            }
             onClick={() => {
               setShotwerQ(4);
             }}
@@ -120,6 +146,11 @@ export default function SHOTwer(props) {
             4th
           </button>
           <button
+            style={
+              shotwerQ == 5
+                ? { backgroundColor: "#d90429" }
+                : { backgroundColor: "white" }
+            }
             onClick={() => {
               setShotwerQ(5);
             }}
@@ -129,6 +160,11 @@ export default function SHOTwer(props) {
         </div>
         <h2>Filter by zone</h2>
         <button
+          style={
+            zone == "all"
+              ? { backgroundColor: "#d90429" }
+              : { backgroundColor: "white" }
+          }
           id="allz-btn"
           onClick={() => {
             setZone("all");
@@ -187,7 +223,7 @@ export default function SHOTwer(props) {
               y="60"
               width="50"
               height="80"
-              fill="white"
+              fill={"white"}
               opacity="0.7"
             ></rect>
             <rect

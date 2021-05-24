@@ -27,30 +27,59 @@ export default function Player1(props) {
           <circle
             key={index}
             className={shotsState ? "" : "hidden"}
+            onMouseEnter={(e) => {
+              e.target.style.fill = "red";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.fill = "white";
+            }}
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"#17EEB8"}
-            opacity="0.35"
-            stroke={"#17EEB8"}
-            strokeOpacity="0.35"
-          ></circle>
+            fill={"white"}
+            opacity="0.4"
+            stroke={"white"}
+            strokeOpacity="0.4"
+          >
+            {" "}
+            <title>
+              {measurement.ACTION_TYPE +
+                " / Min: " +
+                measurement.MINUTES_REMAINING +
+                " Sec: " +
+                measurement.SECONDS_REMAINING}
+            </title>
+          </circle>
         );
       } else if (parseInt(measurement.PERIOD) == quarteState) {
         return (
           <circle
             key={index}
             className={shotsState ? "" : "hidden"}
+            onMouseEnter={(e) => {
+              e.target.style.fill = "red";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.fill = "white";
+            }}
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"#17EEB8"}
-            opacity="0.35"
-            stroke={"#17EEB8"}
-            strokeOpacity="0.35"
-          ></circle>
+            fill={"white"}
+            opacity="0.4"
+            stroke={"white"}
+            strokeOpacity="0.4"
+          >
+            <title>
+              {measurement.ACTION_TYPE +
+                " / Min: " +
+                measurement.MINUTES_REMAINING +
+                " Sec: " +
+                measurement.SECONDS_REMAINING}
+            </title>
+          </circle>
         );
       } else {
         return;

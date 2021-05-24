@@ -27,30 +27,60 @@ export default function Player2(props) {
           <circle
             key={index}
             className={shotsState ? "" : "hidden"}
+            onMouseEnter={(e) => {
+              e.target.style.fill = "red";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.fill = "yellow";
+            }}
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"#ED174B"}
+            fill={"yellow"}
             opacity="0.4"
-            stroke={"#ED174B"}
+            stroke={"yellow"}
             strokeOpacity="0.4"
-          ></circle>
+          >
+            {" "}
+            <title>
+              {measurement.ACTION_TYPE +
+                " / Min: " +
+                measurement.MINUTES_REMAINING +
+                " Sec: " +
+                measurement.SECONDS_REMAINING}
+            </title>
+          </circle>
         );
       } else if (parseInt(measurement.PERIOD) == quarteState) {
         return (
           <circle
             key={index}
             className={shotsState ? "" : "hidden"}
+            onMouseEnter={(e) => {
+              e.target.style.fill = "red";
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.fill = "yellow";
+            }}
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"#ED174B"}
+            fill={"yellow"}
             opacity="0.4"
-            stroke={"#ED174B"}
+            stroke={"yellow"}
             strokeOpacity="0.4"
-          ></circle>
+          >
+            {" "}
+            <title>
+              {measurement.ACTION_TYPE +
+                " / Min: " +
+                measurement.MINUTES_REMAINING +
+                " Sec: " +
+                measurement.SECONDS_REMAINING}
+            </title>
+          </circle>
         );
       } else {
         return;
