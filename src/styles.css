@@ -268,11 +268,12 @@ h1 {
 .shw-btns button {
   width: 10%;
   margin: 5px;
-  padding: 25px;
-  border-radius: 10em;
+  padding: 5px;
+  border-radius: 0.5em;
+  border: #262626 solid 3px;
   font-size: 20px;
   text-align: center;
-  background-color: rgb(196, 196, 196);
+  background-color: white;
   color: black;
 }
 
@@ -290,4 +291,72 @@ h1 {
 #apply {
   height: 40px;
   width: 80px;
+}
+
+#mini-container {
+  position: relative;
+  left: 33%;
+}
+
+fieldset {
+  width: 100%;
+  border-radius: 1em;
+  border: #262626 solid 5px;
+  font-family: "Roboto Mono", monospace;
+}
+
+fieldset button {
+  background-color: white;
+  margin-left: 10px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 0.5em;
+  margin-bottom: 15px;
+  box-shadow: 2px 3px 2px 1px #888888;
+}
+
+fieldset input {
+  font-size: 18px;
+}
+
+.player-search form {
+  width: 80%;
+}
+
+fieldset legend {
+  font-size: 30px;
+}
+
+#apply-btn {
+  position: relative;
+  left: 80%;
+  font-size: 24px;
+  border-radius: 0.5em;
+  border: #262626 solid 3px;
+  padding: 10px;
+  box-shadow: 2px 3px 2px 1px #888888;
+}
+
+#apply-btn:hover,
+fieldset button:hover,
+#allz-btn:hover {
+  background-color: #262626;
+  color: white;
+}
+
+#allz-btn {
+  position: relative;
+  left: 38.6%;
+  font-size: 22px;
+  margin-bottom: 10px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 0.5em;
+  border: #262626 solid 3px;
+  box-shadow: 2px 3px 2px 1px #888888;
+}
+
+#shotwer h3 {
+  margin-left: 30%;
+  padding: 10px;
 }

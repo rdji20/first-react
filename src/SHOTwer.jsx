@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import BasketballCourt from "./tools/BasketballSvg";
 import Player1 from "./Player1";
 import Player2 from "./Player2";
+import MiniBasketball from "./tools/MiniBasketball";
 
 export default function SHOTwer(props) {
   const shotData = props.data;
@@ -49,34 +50,39 @@ export default function SHOTwer(props) {
   return (
     <div id="shotwer">
       <div className="control-box">
-        <h2>Search by player</h2>
         <div className="player-search">
           <form onSubmit={handleSubmit}>
             <fieldset>
-              <legend> Search by player</legend>
-              <input
-                onChange={(e) => {
-                  setShotwerQ(0);
-                  setApply1(false);
-                  setPlayer1(e.target.value);
-                }}
-                placeholder="Player1"
-              />
-              <input
-                onChange={(e) => {
-                  setShotwerQ(0);
-                  setApply2(false);
-                  setPlayer2(e.target.value);
-                }}
-                placeholder="Player2"
-              />
-              <button>APPLY</button>
+              <legend>Search Players</legend>
+              <div>
+                <input
+                  onChange={(e) => {
+                    setShotwerQ(0);
+                    setApply1(false);
+                    setPlayer1(e.target.value);
+                  }}
+                  placeholder="Player1"
+                />
+                <button onClick={handleHideP1}>Hide P1</button>
+              </div>
+              <div>
+                <input
+                  onChange={(e) => {
+                    setShotwerQ(0);
+                    setApply2(false);
+                    setPlayer2(e.target.value);
+                  }}
+                  placeholder="Player2"
+                />
+                <button onClick={handleHideP2}>Hide P2</button>
+              </div>
+
+              <button id="apply-btn">APPLY</button>
             </fieldset>
           </form>
-          <button onClick={handleHideP1}>Hide P1</button>
-          <button onClick={handleHideP2}>Hide P2</button>
         </div>
         <h2>Time span</h2>
+        <h3>{"Current quarter: " + shotwerQ}</h3>
         <div className="shw-btns">
           <button
             onClick={() => {
@@ -121,18 +127,107 @@ export default function SHOTwer(props) {
             OT
           </button>
         </div>
-        <label>
-          Filter by court zone:
-          <select onChange={updateZone}>
-            <option value="all">ALL</option>
-            <option value="Right Side(R)">Right Side(R)</option>
-            <option value="Right Side Center(RC)">Right Side Center(RC)</option>
-            <option value="Center(C)">Center(C)</option>
-            <option value="Left Side(L)">Left Side(L)</option>
-            <option value="Left Side Center(LC)">Left Side Center(LC)</option>
-          </select>
-        </label>
+        <h2>Filter by zone</h2>
+        <button
+          id="allz-btn"
+          onClick={() => {
+            setZone("all");
+          }}
+        >
+          All zones
+        </button>
+        <div>
+          <svg id="mini-container">
+            <MiniBasketball />
+            <rect
+              onMouseEnter={(e) => {
+                e.target.style.fill = "black";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fill = "white";
+              }}
+              onClick={() => {
+                setZone("Left Side(L)");
+              }}
+              x="10"
+              y="10"
+              width="50"
+              height="40"
+              fill="white"
+              opacity="0.7"
+            ></rect>
+            <rect
+              onMouseEnter={(e) => {
+                e.target.style.fill = "black";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fill = "white";
+              }}
+              onClick={() => {
+                setZone("Right Side(R)");
+              }}
+              x="145"
+              y="10"
+              width="50"
+              height="40"
+              fill="white"
+              opacity="0.7"
+            ></rect>
+            <rect
+              onMouseEnter={(e) => {
+                e.target.style.fill = "black";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fill = "white";
+              }}
+              onClick={() => {
+                setZone("Left Side Center(LC)");
+              }}
+              x="10"
+              y="60"
+              width="50"
+              height="80"
+              fill="white"
+              opacity="0.7"
+            ></rect>
+            <rect
+              onMouseEnter={(e) => {
+                e.target.style.fill = "black";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fill = "white";
+              }}
+              onClick={() => {
+                setZone("Right Side Center(RC)");
+              }}
+              x="145"
+              y="60"
+              width="50"
+              height="80"
+              fill="white"
+              opacity="0.7"
+            ></rect>
+            <rect
+              onMouseEnter={(e) => {
+                e.target.style.fill = "black";
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.fill = "white";
+              }}
+              onClick={() => {
+                setZone("Center(C)");
+              }}
+              x="70"
+              y="10"
+              width="65"
+              height="130"
+              fill="white"
+              opacity="0.7"
+            ></rect>
+          </svg>
+        </div>
       </div>
+
       <div className="h-court">
         <svg width={800} height={750} style={{ border: "3px solid black" }}>
           <BasketballCourt />

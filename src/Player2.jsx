@@ -31,9 +31,9 @@ export default function Player2(props) {
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"yellow"}
+            fill={"#ED174B"}
             opacity="0.4"
-            stroke={"yellow"}
+            stroke={"#ED174B"}
             strokeOpacity="0.4"
           ></circle>
         );
@@ -46,9 +46,9 @@ export default function Player2(props) {
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"yellow"}
+            fill={"#ED174B"}
             opacity="0.4"
-            stroke={"yellow"}
+            stroke={"#ED174B"}
             strokeOpacity="0.4"
           ></circle>
         );
