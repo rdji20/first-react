@@ -3,7 +3,6 @@ import React from "react";
 export default function Presentation() {
   return (
     <div id="presentation" className="left-container">
-      <h1>Portland TrailBlazers Research</h1>
       <p>
         Getting a championship is the main goal in basketball and the best
         revenue for the winner of the NBA franchise. From the big picture we can

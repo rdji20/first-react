@@ -23,6 +23,10 @@ const App = () => {
     "https://raw.githubusercontent.com/rdji20/first-react/main/nba_rank_by_year_tbl.csv"
   );
 
+  const [allPlayersData, loading3] = useFetch(
+    "https://raw.githubusercontent.com/rdji20/data/master/nba_shot_18to19_All.csv"
+  );
+
   const maxDraymond = d3.max(
     dataDraymond.map((measurement) => {
       return parseFloat(measurement.DRAYMOND);
@@ -65,8 +69,9 @@ const App = () => {
     <div>
       <h1 id="title-shw">SHOTwer comparisson shot between players</h1>
       <div>
-        <SHOTwer />
+        <SHOTwer data={allPlayersData} />
       </div>
+      <h1>Portland TrailBlazers Research</h1>
       <div id="dashboard">
         <Presentation />
         <div id="graphs">
