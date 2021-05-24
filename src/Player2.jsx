@@ -44,7 +44,9 @@ export default function Player2(props) {
           >
             {" "}
             <title>
-              {measurement.ACTION_TYPE +
+              {measurement.PLAYER_NAME +
+                " - " +
+                measurement.ACTION_TYPE +
                 " / Min: " +
                 measurement.MINUTES_REMAINING +
                 " Sec: " +
@@ -74,7 +76,9 @@ export default function Player2(props) {
           >
             {" "}
             <title>
-              {measurement.ACTION_TYPE +
+              {measurement.PLAYER_NAME +
+                " - " +
+                measurement.ACTION_TYPE +
                 " / Min: " +
                 measurement.MINUTES_REMAINING +
                 " Sec: " +

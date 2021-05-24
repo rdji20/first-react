@@ -44,7 +44,9 @@ export default function Player1(props) {
           >
             {" "}
             <title>
-              {measurement.ACTION_TYPE +
+              {measurement.PLAYER_NAME +
+                " - " +
+                measurement.ACTION_TYPE +
                 " / Min: " +
                 measurement.MINUTES_REMAINING +
                 " Sec: " +
@@ -73,7 +75,9 @@ export default function Player1(props) {
             strokeOpacity="0.4"
           >
             <title>
-              {measurement.ACTION_TYPE +
+              {measurement.PLAYER_NAME +
+                " - " +
+                measurement.ACTION_TYPE +
                 " / Min: " +
                 measurement.MINUTES_REMAINING +
                 " Sec: " +
