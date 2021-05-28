@@ -318,12 +318,13 @@ fieldset button {
 }
 
 .p1-input {
+  background-color: #ff9933;
   border: #262626 solid 3px;
   padding: 5px;
 }
 
 .p2-input {
-  background-color: yellow;
+  background-color: #3399ff;
   border: #262626 solid 3px;
   padding: 5px;
 }

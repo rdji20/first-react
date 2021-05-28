@@ -28,18 +28,18 @@ export default function Player2(props) {
             key={index}
             className={shotsState ? "" : "hidden"}
             onMouseEnter={(e) => {
-              e.target.style.fill = "red";
+              e.target.style.fill = "white";
             }}
             onMouseLeave={(e) => {
-              e.target.style.fill = "yellow";
+              e.target.style.fill = "#3399FF";
             }}
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"yellow"}
+            fill={"#3399FF"}
             opacity="0.4"
-            stroke={"yellow"}
+            stroke={"#3399FF"}
             strokeOpacity="0.4"
           >
             {" "}
@@ -60,18 +60,18 @@ export default function Player2(props) {
             key={index}
             className={shotsState ? "" : "hidden"}
             onMouseEnter={(e) => {
-              e.target.style.fill = "red";
+              e.target.style.fill = "white";
             }}
             onMouseLeave={(e) => {
-              e.target.style.fill = "yellow";
+              e.target.style.fill = "#3399FF";
             }}
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
             r={5}
-            fill={"yellow"}
+            fill={"#3399FF"}
             opacity="0.4"
-            stroke={"yellow"}
+            stroke={"#3399FF"}
             strokeOpacity="0.4"
           >
             {" "}
