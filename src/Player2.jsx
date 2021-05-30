@@ -38,9 +38,9 @@ export default function Player2(props) {
             cy={measurement.svg_relative_position_y - 10}
             r={5}
             fill={"#3399FF"}
-            opacity="0.4"
+            opacity="0.6"
             stroke={"#3399FF"}
-            strokeOpacity="0.4"
+            strokeOpacity="0.6"
           >
             {" "}
             <title>
@@ -70,9 +70,9 @@ export default function Player2(props) {
             cy={measurement.svg_relative_position_y - 10}
             r={5}
             fill={"#3399FF"}
-            opacity="0.4"
+            opacity="0.6"
             stroke={"#3399FF"}
-            strokeOpacity="0.4"
+            strokeOpacity="0.6"
           >
             {" "}
             <title>

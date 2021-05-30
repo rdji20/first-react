@@ -72,7 +72,7 @@ const App = () => {
         {" "}
         This software contains data from all the shots attempted by all the
         players in the 2018-19 NBA season. A query example is player1 = "Damian
-        Lillard" and player2 "Markelle Fultz" (Expected name as NBA database's).
+        Lillard" and player2 "Markelle Fultz" (Expected name as NBA database).
       </p>
       <div>
         <SHOTwer data={allPlayersData} />
