@@ -36,11 +36,11 @@ export default function Player2(props) {
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
-            r={5}
+            r={2.5}
             fill={"#3399FF"}
-            opacity="0.6"
+            opacity="0.7"
             stroke={"#3399FF"}
-            strokeOpacity="0.6"
+            strokeOpacity="0.7"
           >
             {" "}
             <title>
@@ -68,11 +68,11 @@ export default function Player2(props) {
             onClick={() => {}}
             cx={measurement.svg_relative_position_x}
             cy={measurement.svg_relative_position_y - 10}
-            r={5}
+            r={2.5}
             fill={"#3399FF"}
-            opacity="0.6"
+            opacity="0.7"
             stroke={"#3399FF"}
-            strokeOpacity="0.6"
+            strokeOpacity="0.7"
           >
             {" "}
             <title>
