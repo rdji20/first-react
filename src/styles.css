@@ -379,3 +379,22 @@ fieldset button:hover,
 #eda-title {
   margin-top: 70px;
 }
+
+#bold-big {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.center-btn {
+  position: relative;
+  left: 35%;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 22px;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  background-color: #d90429;
+  border-radius: 0.5em;
+  border: #262626 solid 3px;
+  box-shadow: 2px 3px 2px 1px #888888;
+}
